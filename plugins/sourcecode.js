@@ -1,11 +1,8 @@
 let fetch = require('node-fetch')
-let handler = async (m, { conn }) => conn.sendButtonLoc(m.chat, await (await fetch(fla + 'Source code')).buffer(), `
-*────────「 SCRIPT 」 ────────*
-> Script Ori = https://github.com/AlyaaXd/rfkbot
+let handler = async (m, { conn }) => conn.sendButtonLoc(m.chat, await (await fetch(fla + 'Private Om:v')).buffer(), `
+> Script Ori = https://github.com/nurutomo/wabot-aq
 
-> Script Recode By Pilar = https://github.com/PilarV2/Zeus-BotzV2
-
-`.trim(), '© ZeusBotz', 'Thanks', '.tqto')
+`.trim(), '© IyanXyz Gnteng', 'OwnerBot', '.owner')
 handler.help = ['sourcecode']
 handler.tags = ['info']
 handler.command = /^(sourcecode|sc|scbot|script|github)$/i
