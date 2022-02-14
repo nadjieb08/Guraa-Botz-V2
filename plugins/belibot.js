@@ -3,7 +3,8 @@ let handler = async (m, { conn }) => {
 	conn.send2ButtonLoc(m.chat, await (await fetch(fla + 'sewa bot')).buffer(), `╭═══ *〘 SEWA 〙*
 ║ ┅ ๑————————————๑
 ║┊ ⌲ Sewa = _5k/grup (1 Bulan)_
-║┊ ⌲ Sewa = _15k/grup (Permanent)_                                                                      ║┊ ⌲ Sewa = _45k/grup (12 bulan)_
+║┊ ⌲ Sewa = _15k/grup (Permanent)_                                                                      
+║┊ ⌲ Sewa = _20k/2grup (12 bulan)_
 ╰═ ┅ ═══════
 ╭═══ *〘 BELI PREMIUM 〙*
 ║ ┅ ๑————————————๑
