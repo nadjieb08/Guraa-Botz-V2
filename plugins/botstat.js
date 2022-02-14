@@ -9,15 +9,6 @@ let handler = async (m, { conn }) => {
     let uptime = clockString(_uptime)
 
     let str = `
-┌─〔 Info AlyaaXzy Botz 〕
-│Name: AlyaaXzy
-│Main Owner: AlyaaXzy
-│Operated Since: 19 September 2021
-│Language Used: Nodejs (JS)
-│Server: Heroku
-│SC: -
-└────
-
 ┌─〔 Status 〕
 ├ Aktif selama ${uptime}
 ├ Baterai ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 pengisian' : ''}` : 'tidak diketahui'}
