@@ -58,7 +58,7 @@ const defaultMenu = {
 │▸ *Database:* %rtotalreg dari %totalreg
 ╰────────────────
 %readmore`.trimStart(),
-  header: '┏─❍ %category\n\n',
+  header: '┏─❍ %category',
   body: '├❍ *%cmd*',
   footer: '┗─❍\n',
   after: `
