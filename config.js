@@ -14,7 +14,7 @@
 gc1 = ''
 gc2 = ''
 gc3 = ''
-global.linkGC = ['https://chat.whatsapp.com/HJ9pD2XJ8vq7whuAYOvT1Y', ''] // ganti jadi group lu
+global.linkGC = ['', ''] // ganti jadi group lu
 global.owner = ['6289625556161','62896255561613'] // Put your number here //owner eval
 global.kontak = ['6289625556161','62896255561613'] //Ketika ada yang ngetik #owner
 global.mods = ['0'] // Want some help?
@@ -47,8 +47,8 @@ zekskey = 'apivinz'
 xteamkey = 'Dawnfrostkey'
 //xteam        MIMINETBOT
 namaig = 'GAK ADA :)'
-namagithub = 'https://github.com/MASTERMAN200'
-kasihcaption = `Nih kak`
+namagithub = 'https://github.com/IyanXyz'
+kasihcaption = `Nih Om😎`
 namakontak1 = 'Pilar Owner Bot'
 namakontak2 = 'Caca Admin Bot'
 
@@ -75,8 +75,9 @@ global.eror = '_*Server Error*_'
 
 global.fla = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=water-logo&doScale=true&scaleWidth=500&scaleHeight=500&fontsize=100&fillTextType=0&backgroundColor=%23101820&text='
 
-// Ubah saja SC dari AlyaaXzy
+// Ubah saja Tambahan By IyanXyz Ganz
 global.image = 'https://telegra.ph/file/f96eee5c2c75bd32c1f58.png'//thumbnail
+global.iyanxyz = 'https://telegra.ph/file/3338e1a48968776b43aa2.jpg'//thumbnail buat menu.js
 
 // tingkat kesulitan, semakin tinggi semakin susah
 global.multiplier = 40 // The higher, The harder levelup
