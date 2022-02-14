@@ -2,7 +2,7 @@ let fs = require('fs')
 let handler  = async (m, { conn, usedPrefix }) => {
 prep = conn.prepareMessageFromContent(m.chat, { orderMessage: { 
 itemCount: 999999999999, status: 1,
-message: `AwogAwogAwog`,
+message: `GuraBotzz The Best Pokoknyaaaaa....... Kyahhhh >_<`,
 orderTitle: 'B',
 sellerJid: '0@s.whatsapp.net',
 thumbnail: fs.readFileSync('./src/RadBotZ.jpg')
