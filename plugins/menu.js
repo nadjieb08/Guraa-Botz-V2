@@ -4,45 +4,7 @@ let fs = require('fs')
 let path = require('path')
 let fetch = require('node-fetch')
 let moment = require('moment-timezone')
-const defaultMenu = {
-  before: `
-╭───────────────
-│    *${ucapan()} %name!*
-┠─────═[ *USER INFO* ]═─────⋆
-│▸ *Name:* %name
-│▸ *Premium:* 404
-│▸ *Limit:* %limit
-│▸ *Role:* %role
-│▸ *Xp:* %exp / %maxexp
-│▸ *Total Xp:* %totalexp
-┠─────═[ *TODAY* ]═─────⋆
-│▸ Tanggal: *%week %weton, %date*
-│▸ Tanggal Islam: *%dateIslamic*
-│▸ Waktu: *%time*
-┠─────═[ *BOT INFO* ]═─────⋆
-│▸ *Name:* %me
-│▸ *Mode:* ${global.opts['self'] ? 'Private' : 'Publik'}
-│▸ *Memory Used* : *${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB*
-│▸ *Battery:* ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 pengisian' : ''}` : 'tidak diketahui'}
-│▸ *Uptime:* %uptime (%muptime)
-│▸ *Database:* %rtotalreg dari %totalreg
-╰────────────────
-%readmore`.trimStart(),
-  header: '┌─〔 %category 〕─•',
-  body: '├◌ ⃝✧⪼ %cmd %islimit %isPremium',
-  footer: '└────•\n',
-  after: `
-*%npmname@^%version*
-${'```%npmdesc```'}
-`,
-}
-let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
-let totaljadibot = [...new Set([...global.conns.filter(conn => conn.user && conn.state !== 'close').map(conn => conn.user)])]
-  let tags
-  let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'rpg', 'game', 'jadian', 'xp', 'stiker', 'kerangajaib', 'photo', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
-  if (!arrayMenu.includes(teks)) teks = '404'
-  if (teks == 'all') tags = {
+let tags = {
     'main': 'Utama',
     'game': 'Game',
     'rpg': 'Rpg',
@@ -71,88 +33,40 @@ let totaljadibot = [...new Set([...global.conns.filter(conn => conn.user && conn
     'info': 'Info',
     '': 'Tanpa Kategori',
   }
-  if (teks == 'game') tags = {
-    'game': 'Game'
-  }
-  if (teks == 'rpg') tags = {
-    'rpg': 'Rpg'
-  }
-  if (teks == 'jadian') tags = {
-    'jadian': 'Jadian'
-  }
-  if (teks == 'xp') tags = {
-    'xp': 'Exp & Limit'
-  }
-  if (teks == 'stiker') tags = {
-    'sticker': 'Stiker'
-  }
-  if (teks == 'kerangajaib') tags = {
-    'kerang': 'Kerang Ajaib'
-  }
-  if (teks == 'photo') tags = {
-    'ephoto': 'Ephoto',
-    'photooxy': 'Photooxy'
-  }
-  if (teks == 'quotes') tags = {
-    'quotes': 'Quotes'
-  }
-  if (teks == 'admin') tags = {
-    'admin': `Admin ${global.opts['restrict'] ? '' : '(Dinonaktifkan)'}`
-  }
-  if (teks == 'grup') tags = {
-    'group': 'Grup'
-  }
-  if (teks == 'premium') tags = {
-    'premium': 'Premium'
-  }
-  if (teks == 'internet') tags = {
-    'internet': 'Internet'
-  }
-  if (teks == 'anonymous') tags = {
-    'anonymous': 'Anonymous Chat'
-  }
-  if (teks == 'nulis') tags = {
-    'nulis': 'MagerNulis & Logo'
-  }
-  if (teks == 'downloader') tags = {
-    'downloader': 'Downloader'
-  }
-  if (teks == 'tools') tags = {
-    'tools': 'Tools'
-  }
-  if (teks == 'fun') tags = {
-    'fun': 'Fun'
-  }
-  if (teks == 'database') tags = {
-    'database': 'Database'
-  }
-  if (teks == 'vote') tags = {
-    'vote': 'Voting',
-    'absen': 'Absen'
-  }
-  if (teks == 'quran') tags = {
-    'quran': 'Al Qur\'an'
-  }
-  if (teks == 'audio') tags = {
-    'audio': 'Pengubah Suara'
-  }
-  if (teks == 'jadibot') tags = {
-    'jadibot': 'Jadi Bot'
-  }
-  if (teks == 'info') tags = {
-    'info': 'Info'
-  }
-  if (teks == 'tanpakategori') tags = {
-    '': 'Tanpa Kategori'
-  }
-  if (teks == 'owner') tags = {
-    'owner': 'Owner',
-    'host': 'Host',
-    'advanced': 'Advanced'
-  }
 
-
-
+const defaultMenu = {
+  before: `
+╭───────────────
+│    *${ucapan()} %name!*
+┠─────═[ *USER INFO* ]═─────⋆
+│▸ *Name:* %name
+│▸ *Premium:* 404
+│▸ *Limit:* %limit
+│▸ *Role:* %role
+│▸ *Xp:* %exp / %maxexp
+│▸ *Total Xp:* %totalexp
+┠─────═[ *TODAY* ]═─────⋆
+│▸ Tanggal: *%week %weton, %date*
+│▸ Tanggal Islam: *%dateIslamic*
+│▸ Waktu: *%time*
+┠─────═[ *BOT INFO* ]═─────⋆
+│▸ *Name:* %me
+│▸ *Mode:* ${global.opts['self'] ? 'Private' : 'Publik'}
+│▸ *Memory Used* : *${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB*
+│▸ *Battery:* ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 pengisian' : ''}` : 'tidak diketahui'}
+│▸ *Uptime:* %uptime (%muptime)
+│▸ *Database:* %rtotalreg dari %totalreg
+╰────────────────
+%readmore`.trimStart(),
+  header: '┏─❍ %category\n\n',
+  body: '├❍ *%cmd*',
+  footer: '┗─❍\n',
+  after: `
+*%npmname*
+${'```%npmdesc```'}
+`,
+}
+let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   try {
     let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}'))
     let { exp, limit, level, role, registered } = global.db.data.users[m.sender]
@@ -203,46 +117,7 @@ let totaljadibot = [...new Set([...global.conns.filter(conn => conn.user && conn
         premium: plugin.premium,
         enabled: !plugin.disabled,
       }
-    })
-    if (teks == '404') {
-    throw ` 
-┌〔 DAFTAR MENU 〕─•
-┏━━〔 Status 〕━
-┃❏ Aktif selama ${uptime}
-┃❏ *${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length}* Chat Terbanned
-┃❏ *${totaljadibot.length}* Jadibot
-┃❏ *${conn.blocklist.length}* Terblock
-┃❏ *${Object.keys(global.db.data.users).length}* Pengguna
-┃❏ *${Object.entries(global.db.data.users).filter(user => user[1].banned).length}* Pengguna Terbanned
-├❏ ${_p + command} all
-├❏ ${_p + command} game
-├❏ ${_p + command} rpg 
-├❏ ${_p + command} jadian
-├❏ ${_p + command} xp
-├❏ ${_p + command} stiker
-├❏ ${_p + command} kerangajaib
-├❏ ${_p + command} photo
-├❏ ${_p + command} quotes
-├❏ ${_p + command} admin
-├❏ ${_p + command} grup
-├❏ ${_p + command} premium
-├❏ ${_p + command} internet
-├❏ ${_p + command} anonymous
-├❏ ${_p + command} nulis
-├❏ ${_p + command} downloader
-├❏ ${_p + command} tools
-├❏ ${_p + command} fun
-├❏ ${_p + command} database
-├❏ ${_p + command} vote
-├❏ ${_p + command} quran
-├❏ ${_p + command} audio
-├❏ ${_p + command} jadibot
-├❏ ${_p + command} info
-├❏ ${_p + command} tanpakategori
-├❏ ${_p + command} owner
-└────•
-`.trim()
-}
+     })
     let groups = {}
     for (let tag in tags) {
       groups[tag] = []
@@ -292,21 +167,20 @@ let totaljadibot = [...new Set([...global.conns.filter(conn => conn.user && conn
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3ButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), footer, 'OWNER', '.owner', 'DONASI', '.donasi', 'RULES', '.rules', m)
+    await conn.sendButtonLoc(m.chat, await (await fetch(iyanxyz)).buffer(), text.trim(), 'Grub Bot: https://tinyurl.com/yapnjvdt\nGuraBot', 'Pemilik Guraa Bot', `,.owner`, m)
   } catch (e) {
-    //conn.reply(m.chat, 'Maaf, menu sedang error', m)
+    conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
   }
 }
 handler.help = ['menu', 'help', '?']
 handler.tags = ['main']
-handler.command = /^(m|menu|help|\?)$/i
+handler.command = /^(menu|help|\?)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
 handler.group = false
 handler.private = false
-handler.register = false
 
 handler.admin = false
 handler.botAdmin = false
@@ -316,8 +190,8 @@ handler.exp = 3
 
 module.exports = handler
 
-const more = String.fromCharCode(8206)
-const readMore = more.repeat(4001)
+const more = String.fromCharCode(1)
+const readMore = more.repeat(1)
 
 function clockString(ms) {
   let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
