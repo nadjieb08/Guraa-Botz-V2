@@ -36,15 +36,15 @@ let tags = {
 
 const defaultMenu = {
   before: `
-╭─────────────
+┏─────────────❍
 │*HAI Kak %name!* ${ucapan()} 
-┠──═[ *USER INFO* ]═──⋆
+├──═[ *USER INFO* ]═──⋆
 │▸ NAME: %name
 │▸ LIMIT: %limit
 │▸ ROLE: %role
 │▸ LEVEL: %level / %maxexp
 │▸ XP:  %exp / %totalexp
-┠──═[ *BOT INFO* ]═──⋆
+├──═[ *BOT INFO* ]═──⋆
 │▸ DATE: %week %date
 │▸ ISLAMI: %dateIslamic
 │▸ TIME: %time
@@ -52,10 +52,10 @@ const defaultMenu = {
 │▸ RUNTIME: %uptime
 │▸ USERS: %rtotalreg
 │▸ OWNER: https://github.com/IyanXyz
-╰──────────────
+┗──────────────❍
 %readmore`.trimStart(),
   header: '┏─❍ %category',
-  body: '├❍ *%cmd*',
+  body: '├❍ ```%cmd```',
   footer: '┗─❍\n',
   after: `
 *%npmname*
