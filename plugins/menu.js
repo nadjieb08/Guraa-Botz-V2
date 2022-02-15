@@ -36,27 +36,23 @@ let tags = {
 
 const defaultMenu = {
   before: `
-╭───────────────
-│    *${ucapan()} %name!*
-┠─────═[ *USER INFO* ]═─────⋆
-│▸ *Name:* %name
-│▸ *Premium:* 404
-│▸ *Limit:* %limit
-│▸ *Role:* %role
-│▸ *Xp:* %exp / %maxexp
-│▸ *Total Xp:* %totalexp
-┠─────═[ *TODAY* ]═─────⋆
-│▸ Tanggal: *%week %weton, %date*
-│▸ Tanggal Islam: *%dateIslamic*
-│▸ Waktu: *%time*
-┠─────═[ *BOT INFO* ]═─────⋆
-│▸ *Name:* %me
-│▸ *Mode:* ${global.opts['self'] ? 'Private' : 'Publik'}
-│▸ *Memory Used* : *${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB*
-│▸ *Battery:* ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 pengisian' : ''}` : 'tidak diketahui'}
-│▸ *Uptime:* %uptime (%muptime)
-│▸ *Database:* %rtotalreg dari %totalreg
-╰────────────────
+╭─────────────
+│*HAI Kak %name!* ${ucapan()} 
+┠──═[ *USER INFO* ]═──⋆
+│▸ NAME: %name
+│▸ LIMIT: %limit
+│▸ ROLE: %role
+│▸ LEVEL: %level / %maxexp
+│▸ XP:  %exp / %totalexp
+┠──═[ *BOT INFO* ]═──⋆
+│▸ DATE: %week %date
+│▸ ISLAMI: %dateIslamic
+│▸ TIME: %time
+│▸ MODE: ${global.opts['self'] ? 'Private' : 'Publik'}
+│▸ RUNTIME: %uptime
+│▸ USERS: %rtotalreg
+│▸ OWNER: https://github.com/IyanXyz
+╰──────────────
 %readmore`.trimStart(),
   header: '┏─❍ %category',
   body: '├❍ *%cmd*',
@@ -167,7 +163,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.sendButtonLoc(m.chat, await (await fetch(iyanxyz)).buffer(), text.trim(), 'Grub Bot: https://tinyurl.com/yapnjvdt\nGuraBot', 'Pemilik Guraa Bot', `,.owner`, m)
+    await conn.send3ButtonLoc(m.chat, await (await fetch(iyanxyz)).buffer(), text.trim(), 'Grub Bot: https://tinyurl.com/yapnjvdt\nGuraBot', 'Pemilik Guraa Bot', `,.owner`, m)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
