@@ -57,18 +57,18 @@ namakontak2 = 'Nomor Official TikiBot'
 
 // Sticker WM
 global.packname = 'TikiBot' // ganti aja
-global.author = 'Punya Nadjieb// ganti aja
+global.author = 'Punya Nadjieb' // ganti aja
 
 //yyy
-bc = 'Gura Bot' //Broadcast Watermak
-footer = 'Gura Bot The Best!!!'
-namabot = 'Gura Bot'
-namalu = 'IyanXyz Ganzz'
-watermark = 'Gura Botzz, By IyanXyz' //ganti aja
+bc = 'TikiBot' //Broadcast Watermak
+footer = 'Broadcast TikiBot'
+namabot = 'TikiBot'
+namalu = 'Nadjieb'
+watermark = 'TikiBot, By nadjieb' //ganti aja
 
 // 
 wait = '_*Tunggu Sebentar...*_'
-global.botwm = 'Guraa Botz By IyanXyz'
+global.botwm = 'TikiBot Nadjieb'
 global.wait = '_*Tunggu Sebentar...*_'
 global.rpg = 'Fitur Rpg Dimatikan\nKetik *!enable* *rpg* untuk menggunakan fitur ini!\nKalo Mau main Disini aja\nhttps://chat.whatsapp.com/FnNAbem8o6r4pgLhSdO8Q9'
 global.nsfw = 'Fitur NSFW Dimatikan\nKetik *!enable* *nsfw* untuk menggunakan fitur ini!\n“Katakanlah kepada orang laki-laki yang beriman: Hendaklah mereka menahan pandanganya, dan memelihara kemaluannya; … Katakanlah kepada wanita yang beriman: Hendaklah mereka menahan pandangannya, dan kemaluannya, dan janganlah mereka Menampakkan perhiasannya, kecuali yang (biasa) nampak dari padany,” \n(TQS. Al-Nur [24]: 30-31).'
