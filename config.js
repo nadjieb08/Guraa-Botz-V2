@@ -16,10 +16,10 @@ gc1 = 'https://tinyurl.com/yapnjvdt'
 gc2 = ''
 gc3 = ''
 global.linkGC = ['https://tinyurl.com/yapnjvdt', ''] // ganti jadi group lu
-global.owner = ['6285742344873', '6281244706456', '6281214769844', '6281913868660'] // Put your number here //owner eval
-global.kontak = ['6285742344873', '6281244706456', '6281214769844', '6281913868660'] //Ketika ada yang ngetik #owner
+global.owner = ['6282234343854', '6282234343854', '6282234343854', '6282234343854'] // Put your number here //owner eval
+global.kontak = ['6282234343854', '6282234353854', '6289503886568', '6289503886568'] //Ketika ada yang ngetik #owner
 global.mods = ['0'] // Want some help?
-global.prems = ['6285742344873', '6281244706456', '6281214769844', '6281913868660'] // Premium user has unlimited limit
+global.prems = ['6282234343854', '6281244706456', '6281214769844', '6281913868660'] // Premium user has unlimited limit
 global.APIs = { // API Prefix
   // name: 'https://website'
   rey: 'https://server-api-rey.herokuapp.com',
@@ -33,7 +33,7 @@ global.APIs = { // API Prefix
   LeysCoder: 'https://leyscoders-api.herokuapp.com'
 }
 global.APIKeys = { // APIKey Here
-  // 'https://website': 'apikey' (apikey kalian)
+  // 'https://rest-api-jibb.herokuapp.com': 'ZBOTZZZZ' (apikey kalian)
   'https://server-api-rey.herokuapp.com': 'apirey',
   'https://api.xteam.xyz': 'Dawnfrostkey',
   'https://api.lolhuman.xyz': 'RFK-Rey',
@@ -50,14 +50,14 @@ xteamkey = 'Dawnfrostkey'
 namaig = 'GAK ADA :)'
 namagithub = 'https://github.com/IyanXyz'
 kasihcaption = `Nih Om😎`
-namakontak1 = 'IyanXyz'
-namakontak2 = 'Kimiko'
+namakontak1 = 'Owner Tikibot'
+namakontak2 = 'Nomor Official TikiBot'
 
 //kasihcaption = `Nih Kak`
 
 // Sticker WM
-global.packname = 'GuraBot' // ganti aja
-global.author = 'Gura Punya Saya' // ganti aja
+global.packname = 'TikiBot' // ganti aja
+global.author = 'Punya Nadjieb// ganti aja
 
 //yyy
 bc = 'Gura Bot' //Broadcast Watermak
